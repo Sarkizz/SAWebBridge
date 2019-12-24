@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>webview</title>
+    <style>
+      body {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      button {
+        margin: 5px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="onDeviceType()">设备类型</button>
+    <button onclick="onTakePhoto()">获取图片</button>
+    <button onclick="onMainOnly()">Main特有事件</button>
+    <button onclick="onCallMain()">通知Main</button>
+    <button onclick="onBack()">返回</button>
+    <button onclick="onClose()">关闭</button>
+    <script>
+      // 先初始化jsbridge
+      let err = {
+        code: 'ERR_NONSUPPORT',
+        message: '不支持该环境'
+      }
+      window.$jssdk = () => Promise.reject(err)
+      window.$register = () => Promise.reject(err)
+      window.$unregister = () => Promise.reject(err)
+      window.$resolve = () => Promise.reject(err)
+      window.$reject = () => Promise.reject(err)
+
+      async function init() {
+        return new Promise((resolve, reject) => {
+          if (window.jsbridge) {
+            window.jsbridge.onInited = () => {
+              resolve()
+            }
+            window.jsbridge.init()
+          } else {
+            reject('jsbridge not found')
+          }
+        })
+      }
+
+      async function start() {
+        try {
+          await init()
+        } catch (e) {
+          _log('setup error: ', e)
+        }
+      }
+
+      start()
+
+      function onDeviceType() {
+        const rs = $jssdk('sync.device.type')
+        _log(JSON.stringify(rs))
+      }
+
+      function onMainOnly() {
+        const rs = $jssdk('sync.main.only')
+        _log(JSON.stringify(rs))
+      }
+
+      /**
+       * @return {"failed":0,"list":[{"img":"图片路径,"thumb":"缩略图路径"}]}
+       */
+       function onTakePhoto() {
+        let params = {
+          type: 'base64',
+          quality: 1
+        }
+        let progress = progress => {
+          console.log(progress)
+        }
+        $jssdk('async.photo', params, progress)
+          .then(res => {
+            // _log('onTakePhoto success: \n' + JSON.stringify(res))
+            this._createImage(res.img)
+          })
+          .catch(err => {
+            _log('onTakePhoto error: \n' + JSON.stringify(err))
+          })
+      }
+
+      function onCallMain() {
+        $jssdk('api.alert', {'from': 'app', 'msg': 'callMain'})
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log('api.alert call failed: ' + err)
+        })
+      }
+
+      function onBack() {
+        $jssdk('sync.back')
+      }
+
+      function onClose() {
+        $jssdk('sync.close')
+      }
+
+      function _log(msg) {
+        console.log(msg)
+        alert(msg)
+      }
+
+      function _createImage(path) {
+        var img = document.createElement('img')
+        img.onLoad = () => {
+          console.log('_createImage onLoad')
+        }
+        img.src = path
+        img.style.background = 'blue'
+        img.style.objectFit = 'cover'
+        document.body.appendChild(img)
+      }
+
+    </script>
+  </body>
+</html>

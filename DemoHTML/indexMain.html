@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>webview</title>
+    <style>
+      body {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      button {
+        margin: 5px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="onDeviceType()">设备类型</button>
+    <button onclick="onTakePhoto()">获取图片</button>
+    <button onclick="onMainOnly()">Main特有事件</button>
+    <button onclick="onProgress(this)">进度条</button>
+    <button onclick="onApp()">小程序</button>
+    <button onclick="onLink()">链接</button>
+    <button onclick="onLocalStorageSet()">LocalStorageSet</button>
+    <button onclick="onLocalStorageGet()">LocalStorageGet</button>
+    <button onclick="onLocalStorageRemove()">LocalStorageRemove</button>
+    <button onclick="onLocalStorageClear()">LocalStorageClear</button>
+    <script>
+      // setup jsbridge
+      let err = {
+        code: 'ERR_NONSUPPORT',
+        message: '不支持该环境'
+      }
+      window.$jssdk = () => Promise.reject(err)
+      window.$register = () => Promise.reject(err)
+      window.$unregister = () => Promise.reject(err)
+      window.$resolve = () => Promise.reject(err)
+      window.$reject = () => Promise.reject(err)
+
+      async function init() {
+        return new Promise((resolve, reject) => {
+          if (window.jsbridge) {
+            window.jsbridge.onInited = () => {
+              resolve()
+            }
+            window.jsbridge.init()
+          } else {
+            reject('jsbridge not found')
+          }
+        })
+      }
+
+      async function start() {
+        try {
+          await init()
+
+          $register('event.app.foreground', id => {
+            _log('event.app.foreground')
+          })
+          $register('event.app.background', id => {
+            _log('event.app.background')
+          })
+          $register('api.alert', (id, params) => {
+            _log(JSON.stringify(params))
+            $resolve(id, 'successed ' + params.msg)
+            // $reject(id, 'failed')
+          })
+
+          $jssdk('sync.sdk.ready')
+
+        } catch (e) {
+          _log('setup error: ', e)
+        }
+      }
+
+      start()
+
+      /*
+      APIs
+      */
+
+      function onDeviceType() {
+        const rs = $jssdk('sync.device.type')
+        _log(JSON.stringify(rs))
+      }
+
+      function onTakePhoto() {
+      let params = {
+        type: 'base64',
+        quality: 1
+      }
+      $jssdk('async.photo', params)
+        .then(res => {
+          // _log('onTakePhoto success: \n' + JSON.stringify(res))
+          this._createImage(res.img)
+        })
+        .catch(err => {
+          _log('onTakePhoto error: \n' + JSON.stringify(err))
+        })
+      }
+
+      function onMainOnly() {
+        const rs = $jssdk('sync.main.only')
+        _log(JSON.stringify(rs))
+      }
+
+      function onProgress(id) {
+        $jssdk('async.progress', null, p => { id.innerHTML = p.progress +'%' })
+        .then(res => {
+          id.innerHTML = '进度条'
+        })
+        .catch(err => {
+          id.innerHTML = '失败，重试'
+        })
+      }
+
+      function onApp() {
+        $jssdk('sync.push.app', {'name': 'Test'})
+      }
+
+      function onLink() {
+        $jssdk('sync.push.link', {'url': 'https://www.baidu.com'})
+      }
+
+      function onLocalStorageSet() {
+        window.localStorage.setItem('name', 'test')
+        window.localStorage.setItem('age', 19)
+        window.localStorage.setItem('height', 1.8)
+        window.localStorage.setItem('human', false)
+      }
+
+      function onLocalStorageGet() {
+        _log('name: ' + window.localStorage.getItem('name'))
+        _log('age: ' + window.localStorage.getItem('age'))
+        _log('height: ' + window.localStorage.getItem('height'))
+        _log('human: ' + window.localStorage.getItem('human'))
+      }
+
+      function onLocalStorageRemove() {
+        window.localStorage.removeItem('name')
+      }
+
+      function onLocalStorageClear() {
+        window.localStorage.clear()
+      }
+
+      /*
+      Private
+      */
+
+      function _log(msg) {
+        console.log(msg)
+        alert(msg)
+      }
+
+      function _createImage(path) {
+        var img = document.createElement('img')
+        img.onLoad = () => {
+          console.log('_createImage onLoad')
+        }
+        img.src = path
+        img.style.background = 'blue'
+        img.style.objectFit = 'cover'
+        document.body.appendChild(img)
+      }
+
+    </script>
+  </body>
+</html>

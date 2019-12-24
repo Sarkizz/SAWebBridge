@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A786951823A86E980066B53B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786951723A86E980066B53B /* AppDelegate.swift */; };
+		A786951C23A86E980066B53B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786951B23A86E980066B53B /* ViewController.swift */; };
+		A786951F23A86E980066B53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A786951D23A86E980066B53B /* Main.storyboard */; };
+		A786952123A86E9C0066B53B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A786952023A86E9C0066B53B /* Assets.xcassets */; };
+		A786952423A86E9C0066B53B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A786952223A86E9C0066B53B /* LaunchScreen.storyboard */; };
+		A786953423A86FF60066B53B /* jssdk in Resources */ = {isa = PBXBuildFile; fileRef = A786953323A86FF50066B53B /* jssdk */; };
+		A786953623A870350066B53B /* SAWebViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786953523A870350066B53B /* SAWebViewProtocol.swift */; };
+		A786953823A876200066B53B /* SAWebJSHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786953723A876200066B53B /* SAWebJSHandler.swift */; };
+		A786953D23A8BD4F0066B53B /* SAWebViewUIDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786953C23A8BD4F0066B53B /* SAWebViewUIDelegateHandler.swift */; };
+		A786953F23A8BE3B0066B53B /* SAWebJSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786953E23A8BE3B0066B53B /* SAWebJSManager.swift */; };
+		A786954323A8C0230066B53B /* UIAlertController+util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786954223A8C0230066B53B /* UIAlertController+util.swift */; };
+		A788D1C323AB105B005FC4BD /* PhotoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788D1C223AB105B005FC4BD /* PhotoEvent.swift */; };
+		A788D1C523AB1315005FC4BD /* Dictionary+model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788D1C423AB1315005FC4BD /* Dictionary+model.swift */; };
+		A788D1C723AB1E23005FC4BD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788D1C623AB1E23005FC4BD /* ImagePicker.swift */; };
+		A788D1CA23AB685A005FC4BD /* MainWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A788D1C923AB685A005FC4BD /* MainWebController.swift */; };
+		A78B1C3823B1A8A2004C0C1F /* LinkWebControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B1C3723B1A8A2004C0C1F /* LinkWebControl.swift */; };
+		A78B1C3A23B1A92F004C0C1F /* PushEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B1C3923B1A92F004C0C1F /* PushEvent.swift */; };
+		A78B1C3C23B1B579004C0C1F /* ProgressEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B1C3B23B1B579004C0C1F /* ProgressEvent.swift */; };
+		A78B1C4123B1F4CB004C0C1F /* SANamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B1C4023B1F4CB004C0C1F /* SANamespace.swift */; };
+		A78B1C4323B1FF30004C0C1F /* DemoHTML in Resources */ = {isa = PBXBuildFile; fileRef = A78B1C4223B1FF30004C0C1F /* DemoHTML */; };
+		A7AA59A323B0AB880039BFB3 /* URL+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AA59A223B0AB880039BFB3 /* URL+utils.swift */; };
+		A7AA59A523B0AF370039BFB3 /* AppWebControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AA59A423B0AF370039BFB3 /* AppWebControl.swift */; };
+		A7AA59A723B0B3210039BFB3 /* CommonWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AA59A623B0B3210039BFB3 /* CommonWebController.swift */; };
+		A7BF0FAF23A9B7850098ED9A /* SAWebViewNavigationDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF0FAE23A9B7850098ED9A /* SAWebViewNavigationDelegateHandler.swift */; };
+		A7BF0FB423AA0D0D0098ED9A /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF0FB323AA0D0D0098ED9A /* CustomWebView.swift */; };
+		A7BF0FB623AA10DF0098ED9A /* SALocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF0FB523AA10DF0098ED9A /* SALocalStorage.swift */; };
+		A7BF0FB823AA131E0098ED9A /* SAWebNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF0FB723AA131E0098ED9A /* SAWebNotificationManager.swift */; };
+		A7BF0FBA23AA281E0098ED9A /* CustomEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF0FB923AA281E0098ED9A /* CustomEventHandler.swift */; };
+		A7BF0FBC23AA30810098ED9A /* CustomNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF0FBB23AA30810098ED9A /* CustomNotificationManager.swift */; };
+		A7CE271123ACB7F3006B7F90 /* SALogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE271023ACB7F3006B7F90 /* SALogger.swift */; };
+		CA909B69D5CEA2629549B36D /* libPods-SAWebBridgeDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E5977B2774A9CE8E54B39C /* libPods-SAWebBridgeDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		81E2B876B5DC6E8D2BA8E60C /* Pods-SAWebBridgeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAWebBridgeDemo.debug.xcconfig"; path = "Target Support Files/Pods-SAWebBridgeDemo/Pods-SAWebBridgeDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A786951423A86E980066B53B /* SAWebBridgeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAWebBridgeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A786951723A86E980066B53B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A786951B23A86E980066B53B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A786951E23A86E980066B53B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A786952023A86E9C0066B53B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A786952323A86E9C0066B53B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A786952523A86E9C0066B53B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A786953323A86FF50066B53B /* jssdk */ = {isa = PBXFileReference; lastKnownFileType = folder; name = jssdk; path = ../SAWebBridge/jssdk; sourceTree = "<group>"; };
+		A786953523A870350066B53B /* SAWebViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAWebViewProtocol.swift; sourceTree = "<group>"; };
+		A786953723A876200066B53B /* SAWebJSHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAWebJSHandler.swift; sourceTree = "<group>"; };
+		A786953C23A8BD4F0066B53B /* SAWebViewUIDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAWebViewUIDelegateHandler.swift; sourceTree = "<group>"; };
+		A786953E23A8BE3B0066B53B /* SAWebJSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAWebJSManager.swift; sourceTree = "<group>"; };
+		A786954223A8C0230066B53B /* UIAlertController+util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+util.swift"; sourceTree = "<group>"; };
+		A788D1C223AB105B005FC4BD /* PhotoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEvent.swift; sourceTree = "<group>"; };
+		A788D1C423AB1315005FC4BD /* Dictionary+model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+model.swift"; sourceTree = "<group>"; };
+		A788D1C623AB1E23005FC4BD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A788D1C923AB685A005FC4BD /* MainWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWebController.swift; sourceTree = "<group>"; };
+		A78B1C3723B1A8A2004C0C1F /* LinkWebControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkWebControl.swift; sourceTree = "<group>"; };
+		A78B1C3923B1A92F004C0C1F /* PushEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushEvent.swift; sourceTree = "<group>"; };
+		A78B1C3B23B1B579004C0C1F /* ProgressEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEvent.swift; sourceTree = "<group>"; };
+		A78B1C4023B1F4CB004C0C1F /* SANamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SANamespace.swift; sourceTree = "<group>"; };
+		A78B1C4223B1FF30004C0C1F /* DemoHTML */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DemoHTML; path = ../DemoHTML; sourceTree = "<group>"; };
+		A7AA59A223B0AB880039BFB3 /* URL+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+utils.swift"; sourceTree = "<group>"; };
+		A7AA59A423B0AF370039BFB3 /* AppWebControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWebControl.swift; sourceTree = "<group>"; };
+		A7AA59A623B0B3210039BFB3 /* CommonWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebController.swift; sourceTree = "<group>"; };
+		A7BF0FAE23A9B7850098ED9A /* SAWebViewNavigationDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAWebViewNavigationDelegateHandler.swift; sourceTree = "<group>"; };
+		A7BF0FB323AA0D0D0098ED9A /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
+		A7BF0FB523AA10DF0098ED9A /* SALocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SALocalStorage.swift; sourceTree = "<group>"; };
+		A7BF0FB723AA131E0098ED9A /* SAWebNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAWebNotificationManager.swift; sourceTree = "<group>"; };
+		A7BF0FB923AA281E0098ED9A /* CustomEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEventHandler.swift; sourceTree = "<group>"; };
+		A7BF0FBB23AA30810098ED9A /* CustomNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotificationManager.swift; sourceTree = "<group>"; };
+		A7CE271023ACB7F3006B7F90 /* SALogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SALogger.swift; sourceTree = "<group>"; };
+		D19EE70576236F237FC28096 /* Pods-SAWebBridgeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAWebBridgeDemo.release.xcconfig"; path = "Target Support Files/Pods-SAWebBridgeDemo/Pods-SAWebBridgeDemo.release.xcconfig"; sourceTree = "<group>"; };
+		D5E5977B2774A9CE8E54B39C /* libPods-SAWebBridgeDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAWebBridgeDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A786951123A86E980066B53B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA909B69D5CEA2629549B36D /* libPods-SAWebBridgeDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A786950B23A86E980066B53B = {
+			isa = PBXGroup;
+			children = (
+				A78B1C4223B1FF30004C0C1F /* DemoHTML */,
+				A786953323A86FF50066B53B /* jssdk */,
+				A786952D23A86FE00066B53B /* WebBridge */,
+				A786951623A86E980066B53B /* SAWebBridgeDemo */,
+				A786951523A86E980066B53B /* Products */,
+				C8C46602237FBC2797F9FEAF /* Pods */,
+				BF5D3568A7F894A25D1CD952 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A786951523A86E980066B53B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A786951423A86E980066B53B /* SAWebBridgeDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A786951623A86E980066B53B /* SAWebBridgeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A7AA59A123B0AB660039BFB3 /* Utils */,
+				A7BF0FB223A9BB190098ED9A /* Custom */,
+				A786951723A86E980066B53B /* AppDelegate.swift */,
+				A786951B23A86E980066B53B /* ViewController.swift */,
+				A786951D23A86E980066B53B /* Main.storyboard */,
+				A786952023A86E9C0066B53B /* Assets.xcassets */,
+				A786952223A86E9C0066B53B /* LaunchScreen.storyboard */,
+				A786952523A86E9C0066B53B /* Info.plist */,
+			);
+			path = SAWebBridgeDemo;
+			sourceTree = "<group>";
+		};
+		A786952D23A86FE00066B53B /* WebBridge */ = {
+			isa = PBXGroup;
+			children = (
+				A786954123A8C0140066B53B /* Utils */,
+				A786953523A870350066B53B /* SAWebViewProtocol.swift */,
+				A786953E23A8BE3B0066B53B /* SAWebJSManager.swift */,
+				A786953723A876200066B53B /* SAWebJSHandler.swift */,
+				A7BF0FB523AA10DF0098ED9A /* SALocalStorage.swift */,
+				A7BF0FB723AA131E0098ED9A /* SAWebNotificationManager.swift */,
+				A786953C23A8BD4F0066B53B /* SAWebViewUIDelegateHandler.swift */,
+				A7BF0FAE23A9B7850098ED9A /* SAWebViewNavigationDelegateHandler.swift */,
+			);
+			name = WebBridge;
+			path = ../SAWebBridge/WebBridge;
+			sourceTree = "<group>";
+		};
+		A786954123A8C0140066B53B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A786954223A8C0230066B53B /* UIAlertController+util.swift */,
+				A788D1C423AB1315005FC4BD /* Dictionary+model.swift */,
+				A7CE271023ACB7F3006B7F90 /* SALogger.swift */,
+				A78B1C4023B1F4CB004C0C1F /* SANamespace.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A788D1C123AB1048005FC4BD /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				A788D1C223AB105B005FC4BD /* PhotoEvent.swift */,
+				A78B1C3923B1A92F004C0C1F /* PushEvent.swift */,
+				A78B1C3B23B1B579004C0C1F /* ProgressEvent.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		A788D1C823AB6847005FC4BD /* WebGroup */ = {
+			isa = PBXGroup;
+			children = (
+				A7AA59A623B0B3210039BFB3 /* CommonWebController.swift */,
+				A788D1C923AB685A005FC4BD /* MainWebController.swift */,
+				A7AA59A423B0AF370039BFB3 /* AppWebControl.swift */,
+				A78B1C3723B1A8A2004C0C1F /* LinkWebControl.swift */,
+			);
+			path = WebGroup;
+			sourceTree = "<group>";
+		};
+		A7AA59A123B0AB660039BFB3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A788D1C623AB1E23005FC4BD /* ImagePicker.swift */,
+				A7AA59A223B0AB880039BFB3 /* URL+utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A7BF0FB223A9BB190098ED9A /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A788D1C823AB6847005FC4BD /* WebGroup */,
+				A788D1C123AB1048005FC4BD /* Events */,
+				A7BF0FB323AA0D0D0098ED9A /* CustomWebView.swift */,
+				A7BF0FB923AA281E0098ED9A /* CustomEventHandler.swift */,
+				A7BF0FBB23AA30810098ED9A /* CustomNotificationManager.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		BF5D3568A7F894A25D1CD952 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5E5977B2774A9CE8E54B39C /* libPods-SAWebBridgeDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C8C46602237FBC2797F9FEAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81E2B876B5DC6E8D2BA8E60C /* Pods-SAWebBridgeDemo.debug.xcconfig */,
+				D19EE70576236F237FC28096 /* Pods-SAWebBridgeDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A786951323A86E980066B53B /* SAWebBridgeDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A786952823A86E9C0066B53B /* Build configuration list for PBXNativeTarget "SAWebBridgeDemo" */;
+			buildPhases = (
+				167BA98F6B28EF5BF1DEA42C /* [CP] Check Pods Manifest.lock */,
+				A786951023A86E980066B53B /* Sources */,
+				A786951123A86E980066B53B /* Frameworks */,
+				A786951223A86E980066B53B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SAWebBridgeDemo;
+			productName = SAWebBridgeDemo;
+			productReference = A786951423A86E980066B53B /* SAWebBridgeDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A786950C23A86E980066B53B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = Sarkizz;
+				TargetAttributes = {
+					A786951323A86E980066B53B = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = A786950F23A86E980066B53B /* Build configuration list for PBXProject "SAWebBridgeDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A786950B23A86E980066B53B;
+			productRefGroup = A786951523A86E980066B53B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A786951323A86E980066B53B /* SAWebBridgeDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A786951223A86E980066B53B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A786953423A86FF60066B53B /* jssdk in Resources */,
+				A786952423A86E9C0066B53B /* LaunchScreen.storyboard in Resources */,
+				A786952123A86E9C0066B53B /* Assets.xcassets in Resources */,
+				A78B1C4323B1FF30004C0C1F /* DemoHTML in Resources */,
+				A786951F23A86E980066B53B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		167BA98F6B28EF5BF1DEA42C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SAWebBridgeDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A786951023A86E980066B53B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A786953823A876200066B53B /* SAWebJSHandler.swift in Sources */,
+				A7BF0FB623AA10DF0098ED9A /* SALocalStorage.swift in Sources */,
+				A7BF0FAF23A9B7850098ED9A /* SAWebViewNavigationDelegateHandler.swift in Sources */,
+				A7AA59A323B0AB880039BFB3 /* URL+utils.swift in Sources */,
+				A788D1C523AB1315005FC4BD /* Dictionary+model.swift in Sources */,
+				A786951C23A86E980066B53B /* ViewController.swift in Sources */,
+				A78B1C4123B1F4CB004C0C1F /* SANamespace.swift in Sources */,
+				A786953D23A8BD4F0066B53B /* SAWebViewUIDelegateHandler.swift in Sources */,
+				A786953F23A8BE3B0066B53B /* SAWebJSManager.swift in Sources */,
+				A7BF0FB823AA131E0098ED9A /* SAWebNotificationManager.swift in Sources */,
+				A788D1C323AB105B005FC4BD /* PhotoEvent.swift in Sources */,
+				A786953623A870350066B53B /* SAWebViewProtocol.swift in Sources */,
+				A786954323A8C0230066B53B /* UIAlertController+util.swift in Sources */,
+				A7CE271123ACB7F3006B7F90 /* SALogger.swift in Sources */,
+				A786951823A86E980066B53B /* AppDelegate.swift in Sources */,
+				A7BF0FBA23AA281E0098ED9A /* CustomEventHandler.swift in Sources */,
+				A788D1C723AB1E23005FC4BD /* ImagePicker.swift in Sources */,
+				A788D1CA23AB685A005FC4BD /* MainWebController.swift in Sources */,
+				A7BF0FBC23AA30810098ED9A /* CustomNotificationManager.swift in Sources */,
+				A7AA59A523B0AF370039BFB3 /* AppWebControl.swift in Sources */,
+				A7BF0FB423AA0D0D0098ED9A /* CustomWebView.swift in Sources */,
+				A78B1C3823B1A8A2004C0C1F /* LinkWebControl.swift in Sources */,
+				A78B1C3C23B1B579004C0C1F /* ProgressEvent.swift in Sources */,
+				A7AA59A723B0B3210039BFB3 /* CommonWebController.swift in Sources */,
+				A78B1C3A23B1A92F004C0C1F /* PushEvent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A786951D23A86E980066B53B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A786951E23A86E980066B53B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A786952223A86E9C0066B53B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A786952323A86E9C0066B53B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A786952623A86E9C0066B53B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A786952723A86E9C0066B53B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A786952923A86E9C0066B53B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81E2B876B5DC6E8D2BA8E60C /* Pods-SAWebBridgeDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32JP257L9L;
+				INFOPLIST_FILE = SAWebBridgeDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sarkizz.SAWebBridgeDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A786952A23A86E9C0066B53B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D19EE70576236F237FC28096 /* Pods-SAWebBridgeDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32JP257L9L;
+				INFOPLIST_FILE = SAWebBridgeDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sarkizz.SAWebBridgeDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A786950F23A86E980066B53B /* Build configuration list for PBXProject "SAWebBridgeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A786952623A86E9C0066B53B /* Debug */,
+				A786952723A86E9C0066B53B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A786952823A86E9C0066B53B /* Build configuration list for PBXNativeTarget "SAWebBridgeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A786952923A86E9C0066B53B /* Debug */,
+				A786952A23A86E9C0066B53B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A786950C23A86E980066B53B /* Project object */;
+}
