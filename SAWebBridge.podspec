@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SAWebBridge"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.license      = 'MIT'
   s.summary      = "A web bridge for swift H5 project"
   s.author       = { "sarkizz" => "sarkizz@yahoo.com.sg" }
@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.swift_version = '5.0'
 
-  s.subspec 'jssdk' do |ss|
-    ss.source_files = "SAWebBridge/jssdk/*.js"
+  s.subspec 'JS' do |ss|
+    ss.source_files = "SAWebBridge/JS/*.js"
   end
   s.subspec 'WebBridge' do |ss|
     ss.source_files = "SAWebBridge/WebBridge/*.swift"
