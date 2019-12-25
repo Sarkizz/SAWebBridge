@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SAWebBridge
 
 enum WebNotifyEvents: String {
     case enterBackground = "event.app.background"

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import WebKit
 import SnapKit
+import SAWebBridge
 
 public enum WebGroup: Equatable {
     case main

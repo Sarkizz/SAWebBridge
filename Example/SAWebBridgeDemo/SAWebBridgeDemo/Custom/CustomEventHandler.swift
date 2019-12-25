@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SAWebBridge
 
 enum CustomSyncEvents: String {
     case sdk_ready = "sdk.ready"

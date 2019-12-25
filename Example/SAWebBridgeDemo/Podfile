@@ -4,6 +4,7 @@
 target 'SAWebBridgeDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   pod 'SnapKit', '~> 5.0.1'
+  pod 'SAWebBridge', :path => '../../SAWebBridge.podspec'
 
   # Pods for SAWebBridgeDemo
 
