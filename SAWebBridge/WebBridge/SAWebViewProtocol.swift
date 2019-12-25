@@ -36,16 +36,22 @@ public protocol SAWebViewProtocol where Self: WKWebView {
     func handlePolicy(with action: WKNavigationAction) -> Bool
     func webNotificationManager() -> SAWebNotificationManager<Self>?
     
+    func localStorageIdentifier() -> String
     func didInjectBridge(_ params: Any)
     func didInjectSDK(_ result: Result<Any?, Error>)
 }
 
-extension SAWebViewProtocol {
-    public func didInjectBridge(_ params: Any) {
+public extension SAWebViewProtocol {
+    
+    func localStorageIdentifier() -> String {
+        return "com.sa.default.localStorage"
+    }
+    
+    func didInjectBridge(_ params: Any) {
         SADLog("JSBridge did inject with params: \(params)")
     }
     
-    public func didInjectSDK(_ result: Result<Any?, Error>) {
+    func didInjectSDK(_ result: Result<Any?, Error>) {
         switch result {
         case .success(let data):
             SADLog("Inject SDK success: \(data ?? "")")
@@ -155,7 +161,7 @@ extension SAWebViewProtocol {
                                           result: @escaping (SAJSHandleResult) -> Void) {
         guard let data = data as? [String: Any], let key = data["key"] as? String else {
             if action == .clear {
-                SALocalStorage.default.clear()
+                SALocalStorage.default.id(localStorageIdentifier()).clear()
                 result(.sync())
             } else {
                 result(.sync(code: SAReturnCode.failed.rawValue))
@@ -164,12 +170,12 @@ extension SAWebViewProtocol {
         }
         switch action {
         case .getItem:
-            result(.sync(data: SALocalStorage.default.get(itemFor: key)))
+            result(.sync(data: SALocalStorage.default.id(localStorageIdentifier()).get(itemFor: key)))
         case .setItem:
-            SALocalStorage.default.set(data["value"] as? String, for: key)
+            SALocalStorage.default.id(localStorageIdentifier()).set(data["value"] as? String, for: key)
             result(.sync())
         case .removeItem:
-            SALocalStorage.default.remove(itemFor: key)
+            SALocalStorage.default.id(localStorageIdentifier()).remove(itemFor: key)
             result(.sync())
         default:
             // Will not go into this case

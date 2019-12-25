@@ -22,8 +22,8 @@ extension SANamespaceProtocol where WrappedType == UIAlertController {
     
     public static func confirmPanel(title: String? = nil,
                                    message: String?,
-                                   confirmTitle: String = "确定",
-                                   cancelTitle: String = "取消",
+                                   confirmTitle: String = "是",
+                                   cancelTitle: String = "否",
                                    completion: ((UIAlertAction, Bool) -> Void)? = nil) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(.init(title: confirmTitle, style: .default, handler: { action in
