@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SAWebBridge"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.license      = 'MIT'
   s.summary      = "A web bridge for swift H5 project"
   s.author       = { "sarkizz" => "sarkizz@yahoo.com.sg" }
@@ -17,10 +17,10 @@ Pod::Spec.new do |s|
   s.subspec 'WebBridge' do |ss|
     ss.source_files = "SAWebBridge/WebBridge/*.swift"
     ss.ios.frameworks = "UIKit", "Foundation", "WebKit"
-  end
-  s.subspec 'Utils' do |ss|
-    ss.source_files = "SAWebBridge/WebBridge/Utils/*.swift"
-    ss.ios.frameworks = "UIKit", "Foundation"
-  end
-  
+
+    ss.subspec 'Utils' do |sss|
+      sss.source_files = "SAWebBridge/WebBridge/Utils/*.swift"
+      sss.ios.frameworks = "UIKit", "Foundation"
+    end
+  end  
 end
