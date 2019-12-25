@@ -262,7 +262,8 @@ extension SAWebViewProtocol {
     }
     
     private static func injectScript(with fileName: String) -> String? {
-        if let url = Bundle(for: SAWebJSHandler.self).resourceURL?.appendingPathComponent("jssdk/\(fileName)"),
+        let bundle = Bundle(for: SAWebJSManager.self)
+        if let url = bundle.resourceURL?.appendingPathComponent(fileName),
             let data = FileHandle.init(forReadingAtPath: url.path)?.readDataToEndOfFile(),
             let script = String(data: data, encoding: .utf8) {
             return script

@@ -19,9 +19,6 @@
 		A7187AFF23B2E9AF00CD9586 /* SAWebViewNavigationDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7187AF123B2E9AF00CD9586 /* SAWebViewNavigationDelegateHandler.swift */; };
 		A7187B0023B2E9AF00CD9586 /* SAWebViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7187AF223B2E9AF00CD9586 /* SAWebViewProtocol.swift */; };
 		A7187B0123B2E9AF00CD9586 /* SAWebNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7187AF323B2E9AF00CD9586 /* SAWebNotificationManager.swift */; };
-		A7187B0723B2F08200CD9586 /* jsbridge.js in Resources */ = {isa = PBXBuildFile; fileRef = A7187B0523B2F08200CD9586 /* jsbridge.js */; };
-		A7187B0823B2F08200CD9586 /* jssdk.js in Resources */ = {isa = PBXBuildFile; fileRef = A7187B0623B2F08200CD9586 /* jssdk.js */; };
-		A7187B0A23B2F77500CD9586 /* SAWebBridge.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A7187B0923B2F77500CD9586 /* SAWebBridge.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +36,6 @@
 		A7187AF123B2E9AF00CD9586 /* SAWebViewNavigationDelegateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAWebViewNavigationDelegateHandler.swift; sourceTree = "<group>"; };
 		A7187AF223B2E9AF00CD9586 /* SAWebViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAWebViewProtocol.swift; sourceTree = "<group>"; };
 		A7187AF323B2E9AF00CD9586 /* SAWebNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAWebNotificationManager.swift; sourceTree = "<group>"; };
-		A7187B0523B2F08200CD9586 /* jsbridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsbridge.js; sourceTree = "<group>"; };
-		A7187B0623B2F08200CD9586 /* jssdk.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jssdk.js; sourceTree = "<group>"; };
-		A7187B0923B2F77500CD9586 /* SAWebBridge.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = SAWebBridge.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +52,6 @@
 		A7187AD023B2E90C00CD9586 = {
 			isa = PBXGroup;
 			children = (
-				A7187B0923B2F77500CD9586 /* SAWebBridge.podspec */,
 				A7187ADC23B2E90C00CD9586 /* SAWebBridge */,
 				A7187ADB23B2E90C00CD9586 /* Products */,
 			);
@@ -75,7 +68,6 @@
 		A7187ADC23B2E90C00CD9586 /* SAWebBridge */ = {
 			isa = PBXGroup;
 			children = (
-				A7187B0423B2F08200CD9586 /* JS */,
 				A7187AE723B2E9AF00CD9586 /* WebBridge */,
 				A7187ADD23B2E90C00CD9586 /* SAWebBridge.h */,
 				A7187ADE23B2E90C00CD9586 /* Info.plist */,
@@ -107,15 +99,6 @@
 				A7187AEF23B2E9AF00CD9586 /* UIAlertController+util.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		A7187B0423B2F08200CD9586 /* JS */ = {
-			isa = PBXGroup;
-			children = (
-				A7187B0523B2F08200CD9586 /* jsbridge.js */,
-				A7187B0623B2F08200CD9586 /* jssdk.js */,
-			);
-			path = JS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,9 +170,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7187B0823B2F08200CD9586 /* jssdk.js in Resources */,
-				A7187B0A23B2F77500CD9586 /* SAWebBridge.podspec in Resources */,
-				A7187B0723B2F08200CD9586 /* jsbridge.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
