@@ -32,6 +32,8 @@ public class SAWebNotificationManager<T: SAWebViewProtocol> {
     public var main: SAWeakObj<T>?
     
     private var notifications = [String: Set<SAWeakObj<T>>]()
+    
+    public init() {}
 }
 
 extension SAWebNotificationManager {

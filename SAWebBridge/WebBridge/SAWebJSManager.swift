@@ -118,19 +118,19 @@ open class SAWebJSManager {
     
     public struct SAWebJSScriptInfo {
         
-        static let failedSessionId = -99998
+        public static let failedSessionId = -99998
         
-        static let missActionInfo = SAWebJSScriptInfo.init(type: .missAction, sessionId: failedSessionId, action: .none)
-        static let invaildActionInfo = SAWebJSScriptInfo.init(type: .invaildAction, sessionId: failedSessionId, action: .none)
-        static let missSessionId = SAWebJSScriptInfo.init(type: .missSessionId, sessionId: failedSessionId, action: .none)
-        static let unknowInfo = SAWebJSScriptInfo.init(type: .unknow, sessionId: failedSessionId, action: .none)
+        public static let missActionInfo = SAWebJSScriptInfo.init(type: .missAction, sessionId: failedSessionId, action: .none)
+        public static let invaildActionInfo = SAWebJSScriptInfo.init(type: .invaildAction, sessionId: failedSessionId, action: .none)
+        public static let missSessionId = SAWebJSScriptInfo.init(type: .missSessionId, sessionId: failedSessionId, action: .none)
+        public static let unknowInfo = SAWebJSScriptInfo.init(type: .unknow, sessionId: failedSessionId, action: .none)
         
-        var type: ResultType
-        var sessionId: Int
-        var action: SAJSActionType
-        var params: Any?
+        public var type: ResultType
+        public var sessionId: Int
+        public var action: SAJSActionType
+        public var params: Any?
         
-        static func normal(sessionId: Int, action: SAJSActionType, params: Any?) -> SAWebJSScriptInfo {
+        public static func normal(sessionId: Int, action: SAJSActionType, params: Any?) -> SAWebJSScriptInfo {
             return .init(type: .normal, sessionId: sessionId, action: action, params: params)
         }
     }
