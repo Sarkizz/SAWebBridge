@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SAWebBridge"
-  s.version      = "0.0.4"
+  s.version      = "1.0.0"
   s.license      = 'MIT'
   s.summary      = "A web bridge for swift H5 project"
   s.author       = { "sarkizz" => "sarkizz@yahoo.com.sg" }
