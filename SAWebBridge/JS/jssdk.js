@@ -70,7 +70,7 @@ Jssdk.prototype.resolve = function (id, data) {
   this._send(id, SDKProtocol.resolve, data)
 }
 
-Jssdk.prototype.reject = function (id, code, msg) {
+Jssdk.prototype.reject = function (id, code = '', msg = '') {
   // console.log(`jssdk.resolve() - id: ${id}`)
   this._send(id, SDKProtocol.reject, { code, msg })
 }

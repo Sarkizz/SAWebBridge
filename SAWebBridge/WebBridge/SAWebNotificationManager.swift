@@ -58,28 +58,34 @@ extension SAWebNotificationManager {
 extension SAWebNotificationManager {
     
     public struct Callback {
+        
+        public struct RejectError: Codable {
+            public var code: String
+            public var msg: String
+        }
+        
         public typealias Resolve = (_ data: Any?) -> Void
-        public typealias Reject = (_ error: [String: String]?) -> Void
+        public typealias Reject = (_ error: RejectError?) -> Void
         
-        var resolve: Resolve?
-        var reject: Reject?
+        public var resolve: Resolve?
+        public var reject: Reject?
         
-        init(resolve: Resolve? = nil, reject: Reject? = nil) {
+        public init(resolve: Resolve? = nil, reject: Reject? = nil) {
             self.resolve = resolve
             self.reject = reject
         }
     }
     
     public func notify(event: SANotificationEvent, data: Any? = nil, callback: Callback? = nil) {
-        if let set = notifications[event] {
+        if let set = notifications[event], let main = main {
             set.forEach {
                 if let obj = $0.obj {
-                    let id = $0.sessionId + 1
+                    let id = main.sessionId + 1
                     if let callback = callback {
-                        $0.callbacks[id] = callback
+                        main.callbacks[id] = callback
                     }
                     obj.asyncCallback(.rs(type: .exec, id: id, key: event, data: data))
-                    $0.sessionId = id
+                    main.sessionId = id
                 }
             }
         }
@@ -92,6 +98,7 @@ extension SAWebNotificationManager {
                 main.callbacks[id] = callback
             }
             web.asyncCallback(.rs(type: .exec, id: id, key: api, data: data, context: context))
+            main.sessionId = id
         }
     }
     
@@ -100,6 +107,12 @@ extension SAWebNotificationManager {
     }
     
     public func reject(_ id: Int, data: Any? = nil) {
-        main?.callbacks[id]?.reject?(data as? [String: String])
+        var error: Callback.RejectError? {
+            if let data = data as? [String: Any], let rs = try? data.sa.mapModel(Callback.RejectError.self) {
+                return rs
+            }
+            return nil
+        }
+        main?.callbacks[id]?.reject?(error)
     }
 }
