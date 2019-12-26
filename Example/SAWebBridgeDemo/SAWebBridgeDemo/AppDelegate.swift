@@ -26,7 +26,15 @@ extension AppDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        CustomNotificationManager.shared.notify(.enterForeground)
+        CustomNotificationManager.shared.notify(.enterForeground, callback: .init(resolve: { data in
+            if let data = data {
+                print(data)
+            }
+        }, reject: {error in
+            if let e = error {
+                print("Error: code \(e.code), msg \(e.msg)")
+            }
+        }))
     }
 }
 

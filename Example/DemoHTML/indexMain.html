@@ -59,7 +59,9 @@
           await init()
 
           $register('event.app.foreground', id => {
-            _log('event.app.foreground')
+            //_log('event.app.foreground')
+            $resolve(id, 'event.app.foreground')
+            $reject(id, "TEST_CODE", 'just for test')
           })
           $register('event.app.background', id => {
             _log('event.app.background')
@@ -67,7 +69,6 @@
           $register('api.alert', (id, params) => {
             _log(JSON.stringify(params))
             $resolve(id, 'successed ' + params.msg)
-            // $reject(id, 'failed')
           })
 
           $jssdk('sync.sdk.ready')
