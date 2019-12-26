@@ -48,9 +48,9 @@ webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt: defaultText:
 
 ### LocalStorage
 - 介绍
-  `webView`初始化的时候可以配置是否`hook`H5的LocalStorage存储。为了让主应用和各个小程序的存储不相互影响，推荐配置为true。
+  >`webView`初始化的时候可以配置是否`hook`H5的LocalStorage存储。为了让主应用和各个小程序的存储不相互影响，推荐配置为true。
 - SALocalStorageProtocol
-  遵循`SALocalStorageProtocol`协议的都可以成为存储器，默认提供一个使用`UserDefault`作为存储器的实现。
+  >遵循`SALocalStorageProtocol`协议的都可以成为存储器，默认提供一个使用`UserDefault`作为存储器的实现。
 - 通过`SAWebViewProtocol`协议的`localStorageIdentifier()`方法，配置各个H5的存储id，用于区分各自的存储。
 
 ### 遗留问题
