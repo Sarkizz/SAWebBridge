@@ -43,6 +43,10 @@ final class CustomWebView: WKWebView, SAWebViewProtocol {
     func webNotificationManager() -> SAWebNotificationManager<CustomWebView>? {
         return delegate?.webNotificationManager(self)
     }
+    
+    func shouldInjectJS() -> Bool {
+        return true
+    }
 }
 
 extension CustomWebView {

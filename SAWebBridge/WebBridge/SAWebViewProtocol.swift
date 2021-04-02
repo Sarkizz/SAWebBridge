@@ -22,10 +22,14 @@ public enum RuleListRemoveType {
 }
 
 public class SAWebConfig {
+    var shouldInjectJS: Bool
     var shouldHookLocalStorage: Bool
     var webConf: WKWebViewConfiguration
     
-    public init(shouldHookLocalStorage: Bool = false, webConf: WKWebViewConfiguration = .init()) {
+    public init(shouldInjectJS: Bool = true,
+                shouldHookLocalStorage: Bool = false,
+                webConf: WKWebViewConfiguration = .init()) {
+        self.shouldInjectJS = shouldInjectJS
         self.shouldHookLocalStorage = shouldHookLocalStorage
         self.webConf = webConf
     }
@@ -65,30 +69,33 @@ public extension SAWebViewProtocol {
 extension SAWebViewProtocol {
     
     public static func webView(_ config: SAWebConfig = .init()) -> Self {
-        if let js = jsbridge {
-            config.webConf.addStart(script: js)
-        }
-        let wk = Self(frame: .zero, configuration: config.webConf)
-        wk.add(handler: { (_, message) in
-            let webView = message.webView as? Self
-            webView?.didInjectBridge(message.body)
-            if let js = jssdk(shouldHookLocalStorage: config.shouldHookLocalStorage) {
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    message.webView?.evaluateJavaScript(js, completionHandler: { rs, error in
-                        var rs: Result<Any?, Error> {
-                            if let error = error {
-                                return .failure(error)
-                            } else {
-                                return .success(rs)
-                            }
-                        }
-                        webView?.didInjectSDK(rs)
-                    })
-                }
+        if config.shouldInjectJS {
+            if let js = jsbridge {
+                config.webConf.addStart(script: js)
             }
-        }, for: "initSDK")
-        
-        return wk
+            let wk = Self(frame: .zero, configuration: config.webConf)
+            wk.add(handler: { (_, message) in
+                let webView = message.webView as? Self
+                webView?.didInjectBridge(message.body)
+                if let js = jssdk(shouldHookLocalStorage: config.shouldHookLocalStorage) {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        message.webView?.evaluateJavaScript(js, completionHandler: { rs, error in
+                            var rs: Result<Any?, Error> {
+                                if let error = error {
+                                    return .failure(error)
+                                } else {
+                                    return .success(rs)
+                                }
+                            }
+                            webView?.didInjectSDK(rs)
+                        })
+                    }
+                }
+            }, for: "initSDK")
+            return wk
+        } else {
+            return Self(frame: .zero, configuration: config.webConf)
+        }
     }
 }
 
