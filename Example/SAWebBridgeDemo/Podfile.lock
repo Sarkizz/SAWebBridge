@@ -1,0 +1,27 @@
+PODS:
+  - SAWebBridge (1.0.0):
+    - SAWebBridge/WebBridge (= 1.0.0)
+  - SAWebBridge/WebBridge (1.0.0):
+    - SAWebBridge/WebBridge/Utils (= 1.0.0)
+  - SAWebBridge/WebBridge/Utils (1.0.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - SAWebBridge (from `../../SAWebBridge.podspec`)
+  - SnapKit (~> 5.0.1)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  SAWebBridge:
+    :path: "../../SAWebBridge.podspec"
+
+SPEC CHECKSUMS:
+  SAWebBridge: dc46044dd5076b2194858d69e30bb55aca93ab28
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 505a8d71fb5ef0ede597286c0c42d729eb3f10df
+
+COCOAPODS: 1.10.1

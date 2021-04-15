@@ -51,11 +51,11 @@ open class SAWebViewUIDelegateHandler<T: SAWebViewProtocol>: NSObject, WKUIDeleg
     }
     
     public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
-        if let info = jsmanager?.parseScript(prompt), let webView = webView as? T {
-            webView.handleJSMessage(with: info, callback: completionHandler)
-        } else {
+        guard let info = jsmanager?.parseScript(prompt), info != SAWebJSManager.SAWebJSScriptInfo.unknowInfo, let webView = webView as? T else {
             customPrompt(message: prompt, defaultText: defaultText, callback: completionHandler)
+            return
         }
+        webView.handleJSMessage(with: info, callback: completionHandler)
     }
 
     public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {

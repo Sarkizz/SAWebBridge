@@ -116,7 +116,11 @@ open class SAWebJSManager {
         case unknow
     }
     
-    public struct SAWebJSScriptInfo {
+    public struct SAWebJSScriptInfo: Equatable {
+        
+        public static func == (lhs: SAWebJSManager.SAWebJSScriptInfo, rhs: SAWebJSManager.SAWebJSScriptInfo) -> Bool {
+            return lhs.type == rhs.type && lhs.sessionId == rhs.sessionId
+        }
         
         public static let failedSessionId = -99998
         

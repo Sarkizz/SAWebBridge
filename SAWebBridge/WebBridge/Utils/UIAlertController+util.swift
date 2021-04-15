@@ -46,7 +46,9 @@ extension SANamespaceProtocol where WrappedType == UIAlertController {
         alert.addAction(.init(title: confirmTitle, style: .default, handler: { action in
             completion?(action, alert.textFields?[0].text)
         }))
-        alert.addAction(.init(title: cancelTitle, style: .cancel))
+        alert.addAction(.init(title: cancelTitle, style: .cancel, handler: { action in
+            completion?(action, nil)
+        }))
         return alert
     }
     
