@@ -35,6 +35,11 @@ public class SAWebConfig {
     }
 }
 
+// cache jsbridge's js string.After first reading file, it will cache the string frome file.
+var _cacheJSBridge: String?
+// cache jssdk's js string.After first reading file, it will cache the string frome file.
+var _cacheJSSDK: String?
+
 public protocol SAWebViewProtocol where Self: WKWebView {
     func customJSMessage(with info: SAWebJSManager.SAWebJSScriptInfo, result: @escaping (_ result: SAJSHandleResult) -> Void)
     func handlePolicy(with action: WKNavigationAction) -> Bool
@@ -247,11 +252,26 @@ extension SAWebViewProtocol {
 extension SAWebViewProtocol {
     
     private static var jsbridge: String? {
-        return injectScript(with: "jsbridge.js")
+        guard let jsbridge = _cacheJSBridge else {
+            let js = injectScript(with: "jsbridge.js")
+            _cacheJSBridge = js
+            return js
+        }
+        return jsbridge
     }
     
     public static func jssdk(shouldHookLocalStorage: Bool = false) -> String? {
-        if var script = injectScript(with: "jssdk.js") {
+        var script: String? {
+            if let js = _cacheJSSDK {
+                return js
+            } else {
+                let js = injectScript(with: "jssdk.js")
+                _cacheJSSDK = js
+                return js
+            }
+        }
+        
+        if var script = script {
             script += "\r\nwindow.__jssdk = new Jssdk()"
             if shouldHookLocalStorage {
                 script += "\r\nwindow.__jssdk._hookLocalStorage()"
